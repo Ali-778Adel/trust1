@@ -55,7 +55,7 @@ class _FollowOrdersLoginScreen extends State<FollowOrdersLoginScreen> {
             if(state.paymentAuthResponseStatus==FollowOrdersLoginResponseStatus.error){
               showToastWidget( CustomToastWidget(
                 toastStatus: ToastStatus.error,
-                toastContent:state.message??'حدث خطأ ما حاول مرة اخري ',
+                toastContent:state.message??AppGeneralTrans.tryAgainTxt,
               ),position: ToastPosition.bottom);
             }
         },

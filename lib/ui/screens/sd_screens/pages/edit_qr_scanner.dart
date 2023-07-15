@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:fl_egypt_trust/models/utils/themes/app_general_trans.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
@@ -60,7 +61,7 @@ class _EditQRViewReaderState extends State<EditQRViewReader> {
               child: (result != null)
                   ? Text(
                   'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
-                  : Text('Scan a code'),
+                  : Text(AppGeneralTrans.scanQRcode),
             ),
           )
         ],

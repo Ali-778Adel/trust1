@@ -220,7 +220,7 @@ class _StateScreenProfile extends State<ScreenProfile> {
                                                                                     BorderRadius.circular(35.0),
                                                                                     side:
                                                                                     BorderSide(color: Palette.mainGreen)))),
-                                                                        child: Center(child: Text("الغاء",style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.white,fontWeight: FontWeight.w600),),)),
+                                                                        child: Center(child: Text(AppGeneralTrans.cancelTxt,style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.white,fontWeight: FontWeight.w600),),)),
                                                                   ),
                                                                 )
                                                               ],
@@ -292,7 +292,7 @@ class _StateScreenProfile extends State<ScreenProfile> {
                                                     }
                                                   }
                                                   if(!await sl<NetworkInfo>().isConnected){
-                                                    showToastWidget(CustomToastWidget(toastStatus: ToastStatus.warning,toastContent: "انت غير متصل بالانتر نت لا يمكنك تغيير اللغة ",),position: ToastPosition.center);
+                                                    showToastWidget(CustomToastWidget(toastStatus: ToastStatus.warning,toastContent: AppGeneralTrans.internetExceptionTxt,),position: ToastPosition.center);
 
                                                   }
 

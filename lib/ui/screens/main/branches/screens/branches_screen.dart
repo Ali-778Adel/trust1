@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:fl_egypt_trust/models/entities/payment_entities/payment_cities_model.dart';
+import 'package:fl_egypt_trust/models/utils/themes/app_general_trans.dart';
 import 'package:fl_egypt_trust/ui/screens/main/payment/bloc/payment_second_form_bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -254,7 +255,7 @@ class _StateScreenBranches extends State<BranchesScreen> {
 
 
                           text: TextSpan(
-                          text:'لا يوجد فروع لدينا فى هذة المدينة من فضلك اختر اقرب مدينة اليك.',
+                          text:AppGeneralTrans.branchesEmptyError,
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium!

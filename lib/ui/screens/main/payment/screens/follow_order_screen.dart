@@ -206,8 +206,8 @@ crossAxisAlignment: CrossAxisAlignment.start,
                           child: Text(
                             state.followOrdersModels![index].serviceStatusId ==
                                     1
-                                ? '${AppGeneralTrans.newTxt}'
-                                : '${AppGeneralTrans.reNewTxt}',
+                                ? AppGeneralTrans.newTxt
+                                : AppGeneralTrans.reNewTxt,
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyLarge
@@ -233,7 +233,7 @@ crossAxisAlignment: CrossAxisAlignment.start,
                        clipBehavior: Clip.antiAlias,
                        children: [
                          Text(
-                           '${AppGeneralTrans.nationalIdTitleTxt}',
+                           AppGeneralTrans.nationalIdTitleTxt,
                            style: Theme.of(context)
                                .textTheme
                                .bodyLarge
@@ -261,7 +261,7 @@ crossAxisAlignment: CrossAxisAlignment.start,
                     Row(
                       children: [
                         Text(
-                          '${AppGeneralTrans.oredreNumberTxt}',
+                          AppGeneralTrans.oredreNumberTxt,
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge
@@ -470,13 +470,6 @@ crossAxisAlignment: CrossAxisAlignment.start,
   Widget _buildButton({required Function() onTap, required String childTxt}) {
     return ElevatedButton(
         onPressed: onTap,
-        child: Text(
-          childTxt,
-          style: Theme.of(context)
-              .textTheme
-              .bodyLarge!
-              .copyWith(color: Palette.mainGreen),
-        ),
         style: ButtonStyle(
             minimumSize: MaterialStateProperty.all<Size>(Size(40.sp, 30.sp)),
             backgroundColor: MaterialStateProperty.all<Color>(Palette.white),
@@ -484,7 +477,14 @@ crossAxisAlignment: CrossAxisAlignment.start,
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25.0),
-                    side: BorderSide(color: Palette.white)))));
+                    side: BorderSide(color: Palette.white)))),
+        child: Text(
+          childTxt,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge!
+              .copyWith(color: Palette.mainGreen),
+        ));
   }
 
   Future<String> getOrderRefNumber({

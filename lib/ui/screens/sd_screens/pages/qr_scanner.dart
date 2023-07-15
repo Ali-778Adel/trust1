@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
+import '../../../../models/utils/themes/app_general_trans.dart';
 import '../../widgets/custom_app_bar.dart';
 import 'configs_screen.dart';
 
@@ -59,7 +60,7 @@ class _QRViewReaderState extends State<QRViewReader> {
               child: (result != null)
                   ? Text(
                   'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
-                  : Text('Scan a code'),
+                  : Text(AppGeneralTrans.scanQRcode),
             ),
           )
         ],

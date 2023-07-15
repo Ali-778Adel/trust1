@@ -65,7 +65,7 @@ class ShimmerHomeScreen extends StatelessWidget{
         Padding(
           padding: EdgeInsets.only(top: 24.sp, bottom: 16.sp),
           child: Text(
-            "الخدمات",
+            "",
             style: TextStyle(
                 color: const Color(0xa6000000),
                 fontWeight: FontWeight.w600,
@@ -93,7 +93,7 @@ class ShimmerHomeScreen extends StatelessWidget{
                   height: 2,
                   decoration: const BoxDecoration(color: Color(0x75285397)))),
           Expanded(
-              child: Text("تواصل معنا",
+              child: Text(" ",
                   style: TextStyle(
                       color: const Color(0xa6000000),
                       fontWeight: FontWeight.w600,

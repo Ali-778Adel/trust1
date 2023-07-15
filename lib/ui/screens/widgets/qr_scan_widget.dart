@@ -1,3 +1,4 @@
+import 'package:fl_egypt_trust/models/utils/themes/app_general_trans.dart';
 import 'package:fl_egypt_trust/models/utils/themes/colors.dart';
 import 'package:fl_egypt_trust/ui/screens/sd_screens/pages/qr_scanner.dart';
 import 'package:fl_egypt_trust/ui/screens/widgets/row_dropdown.dart';
@@ -52,7 +53,7 @@ class QrSignatureCustomField extends StatelessWidget {
                        children: [
                           Icon(Icons.qr_code_2_outlined,color: Palette.mainBlue,),
                          SizedBox(width: 2.w,),
-                         Text("امسح  QR كود  ",style: Theme.of(context).textTheme.bodyMedium,)
+                         Text(AppGeneralTrans.scanQRcode,style: Theme.of(context).textTheme.bodyMedium,)
                        ],
                      ),
                    ),

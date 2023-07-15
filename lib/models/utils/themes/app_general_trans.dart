@@ -133,6 +133,12 @@ class AppGeneralTrans {
   static String doneEiditedDataTxt = getGeneralTransByKey('doneEiditedDataTxt');
   static String targetDataForSealTxt = getGeneralTransByKey('targetDataForSealTxt');
   static String eneterDataFirstAlertTxt = getGeneralTransByKey('eneterDataFirstAlertTxt');
+  static String scanQRcode = getGeneralTransByKey('scanQRcode');
+  static String generalNoteTxt = getGeneralTransByKey('generalNoteTxt');
+  static String followOrderBackTxt = getGeneralTransByKey('followOrderBackTxt');
+  static String generalRulesAgreement = getGeneralTransByKey('generalRulesAgreement');
+  static String generalPaymentRulesAgreement = getGeneralTransByKey('generalPaymentRulesAgreement');
+  static String branchesEmptyError = getGeneralTransByKey('branchesEmptyError');
 
 
 

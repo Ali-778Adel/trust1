@@ -431,9 +431,10 @@ class _PaymentSecondFormScreenState extends State<PaymentSecondFormScreen> {
                       maxLength: 9,
                       textEditingController: taxNumberController,
                       textFieldTypes: TextFieldTypes.number,
-                      labelHint:'الرقم الضريبي',
+                      labelHint: ' ${getTrans(state: stat, txtKey: 'VatEgTxt')}',
                       fieldHint:
-                      "ادخل الرقم الضريبي",
+                      ' ${AppGeneralTrans.enterTxt}'
+                      ' ${getTrans(state: stat, txtKey: 'VatEgTxt')}',
                       validator: (val) {
                         return checkVal(
                             val: val,
