@@ -14,6 +14,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../../../../../../../models/utils/themes/app_general_trans.dart';
+
 
 class ScreenResetPasswordOtp extends StatefulWidget {
   final String mobileNumber;
@@ -57,7 +59,7 @@ class _StateScreenResetPasswordOtp extends State<ScreenResetPasswordOtp> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: CustomAppBar(context: context,pageTitle: appLocalization.resetPassword).call(),
+      appBar: CustomAppBar(context: context,pageTitle: AppGeneralTrans.resetPassword).call(),
       body: BlocBuilder<AuthCubit, AuthCubitState>(
           builder: (context, state) {
           return IgnorePointer(
@@ -72,7 +74,7 @@ class _StateScreenResetPasswordOtp extends State<ScreenResetPasswordOtp> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 50.0),
                       child: Text(
-                        appLocalization.enterOtpHint,
+                        AppGeneralTrans.enterOtpHint,
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyText1?.copyWith(
                             fontWeight: FontWeight.bold,
@@ -147,7 +149,7 @@ class _StateScreenResetPasswordOtp extends State<ScreenResetPasswordOtp> {
                                   ? Icons.visibility
                                   : Icons.visibility_off)),
                           errorText: _errorNewPassword ,
-                          labelText: appLocalization.newPassword,
+                          labelText: AppGeneralTrans.newPassword,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -185,7 +187,7 @@ class _StateScreenResetPasswordOtp extends State<ScreenResetPasswordOtp> {
                                   ? Icons.visibility
                                   : Icons.visibility_off)),
                           errorText: _errorConfirmPassword ,
-                          labelText: appLocalization.confirmPassword,
+                          labelText: AppGeneralTrans.confirmPassword,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -210,7 +212,7 @@ class _StateScreenResetPasswordOtp extends State<ScreenResetPasswordOtp> {
                           },
                           child: state.isLoginLoading == true
                               ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                              : Text(appLocalization.resetPassword.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
+                              : Text(AppGeneralTrans.resetPassword.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
                           style: ButtonStyle(
                               minimumSize: MaterialStateProperty.all<Size>(
                                   Size(state.isLoginLoading == true ? 45 : double.infinity, 45)),
@@ -232,7 +234,7 @@ class _StateScreenResetPasswordOtp extends State<ScreenResetPasswordOtp> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          appLocalization.donotGetOtp,
+                          AppGeneralTrans.donotGetOtp,
                           textAlign: TextAlign.center,
                           style: Theme.of(context).textTheme.bodyText1?.copyWith(
                               color: UiConstants.colorTitle
@@ -246,7 +248,7 @@ class _StateScreenResetPasswordOtp extends State<ScreenResetPasswordOtp> {
                         } : null,
                           child: Text(
                               _timeInSeconds == 0 
-                                  ? appLocalization.resend.toUpperCase()
+                                  ? AppGeneralTrans.resend.toUpperCase()
                             : '00:${_timeInSeconds.toString().padLeft(2, '0')}',
                           textAlign: TextAlign.center,
                           style: Theme.of(context).textTheme.button?.copyWith(
@@ -286,12 +288,12 @@ class _StateScreenResetPasswordOtp extends State<ScreenResetPasswordOtp> {
 
 
 
-    _errorOtp = _otpController.text.length < 5 ?appLocalization.errorEnterOtp : null;
-    _errorNewPassword = _newPasswordController.text.isEmpty == true ? appLocalization.errorEnterNewPassword : null;
+    _errorOtp = _otpController.text.length < 5 ?AppGeneralTrans.errorEnterOtp : null;
+    _errorNewPassword = _newPasswordController.text.isEmpty == true ? AppGeneralTrans.errorEnterNewPassword : null;
 
     _errorConfirmPassword = _confirmPasswordController.text.isEmpty == true
-        ? appLocalization.errorEnterConfirmPassword
-        : (_confirmPasswordController.text != _newPasswordController.text ? appLocalization.errorMismatchPassword : null);
+        ? AppGeneralTrans.errorEnterConfirmPassword
+        : (_confirmPasswordController.text != _newPasswordController.text ? AppGeneralTrans.errorMismatchPassword : null);
 
 
 

@@ -16,6 +16,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../../../models/utils/themes/app_general_trans.dart';
+
+
 class ActiveCertificationsView extends StatefulWidget {
   const ActiveCertificationsView({Key? key}) : super(key: key);
 
@@ -85,7 +88,7 @@ class _ActiveCertificationsViewState extends State<ActiveCertificationsView> {
                   && state.userCertificationsErrorMessage == null
           && (state.userCertifications?.length?? 0) > 0,
               child: Text(
-                appLocalization.activeCertificationsCount.replaceAll('@{arg1}', state.userCertifications?.length.toString() ?? '0'),
+                AppGeneralTrans.activeCertificationsCount.replaceAll('@{arg1}', state.userCertifications?.length.toString() ?? '0'),
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyText1?.copyWith(color: UiConstants.colorTitle),
               ),
@@ -121,7 +124,7 @@ class _ActiveCertificationsViewState extends State<ActiveCertificationsView> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            state.userCertificationsErrorMessage ?? appLocalization.noUserCertifications ,
+            state.userCertificationsErrorMessage ?? AppGeneralTrans.noUserCertifications ,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyText1?.copyWith(
                 fontWeight: FontWeight.bold,
@@ -142,7 +145,7 @@ class _ActiveCertificationsViewState extends State<ActiveCertificationsView> {
                   MaterialPageRoute(builder: (context) => ScreenCertification()),
                 );
               },
-              child: Text(appLocalization.createCertification.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
+              child: Text(AppGeneralTrans.createCertification.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
               style: ButtonStyle(
                   minimumSize:
                   MaterialStateProperty.all<Size>(const Size(200, 45)),
@@ -164,7 +167,7 @@ class _ActiveCertificationsViewState extends State<ActiveCertificationsView> {
   }
 
   _requestPin(String certificationSerial)async{
-    BottomSheetLoading.show(context, label: appLocalization.requestingCertificationPin);
+    BottomSheetLoading.show(context, label: AppGeneralTrans.requestingCertificationPin);
     await context.read<CertificationActionsCubit>().requestCertificationPin(certificationSerial: certificationSerial);
     Navigator.of(context).pop();
     _checkActionStates();
@@ -180,7 +183,7 @@ class _ActiveCertificationsViewState extends State<ActiveCertificationsView> {
 
 
   _revokeCertification(String certificationSerial)async{
-    BottomSheetLoading.show(context, label: appLocalization.revokingCertification);
+    BottomSheetLoading.show(context, label: AppGeneralTrans.revokingCertification);
     await context.read<CertificationActionsCubit>().requestRevokeCertificationPin(certificationSerial: certificationSerial);
     Navigator.of(context).pop();
     _checkRevokeActionStates(certificationSerial);

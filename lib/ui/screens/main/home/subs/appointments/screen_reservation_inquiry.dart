@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../../models/utils/themes/app_general_trans.dart';
+
 
 class ScreenReservationInquiry extends StatefulWidget {
 
@@ -40,7 +42,7 @@ class _StateScreenReservationInquiry extends State<ScreenReservationInquiry> {
     return Scaffold(
       appBar: AppBar(
         systemOverlayStyle: SystemUiOverlayStyle.dark,
-        title: Text(appLocalization.reservationInquiry),
+        title: Text(AppGeneralTrans.reservationInquiry),
       ),
       body: BlocBuilder<AppointmentCubit, AppointmentCubitState>(
           builder: (context, state) {
@@ -55,7 +57,7 @@ class _StateScreenReservationInquiry extends State<ScreenReservationInquiry> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 50.0),
                       child: Text(
-                        appLocalization.reservationInquiryMessage,
+                        AppGeneralTrans.reservationInquiryMessage,
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyText1?.copyWith(
                             fontWeight: FontWeight.bold,
@@ -83,7 +85,7 @@ class _StateScreenReservationInquiry extends State<ScreenReservationInquiry> {
                         decoration: InputDecoration(
                           errorMaxLines: 3,
                           errorText: _errorNational ?? state.searchFailMessage,
-                          labelText: appLocalization.nationalId,
+                          labelText: AppGeneralTrans.nationalId,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -107,7 +109,7 @@ class _StateScreenReservationInquiry extends State<ScreenReservationInquiry> {
                           },
                           child: state.isSearchLoading == true
                               ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                              : Text(appLocalization.search.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
+                              : Text(AppGeneralTrans.search.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
                           style: ButtonStyle(
                               minimumSize: MaterialStateProperty.all<Size>(
                                   Size(state.isSearchLoading == true ? 45 : double.infinity, 45)),
@@ -143,9 +145,9 @@ class _StateScreenReservationInquiry extends State<ScreenReservationInquiry> {
 
 
     _errorNational = _nationalIdController.text.isEmpty == true
-        ? appLocalization.errorEnterNationalId
+        ? AppGeneralTrans.errorEnterNationalId
         : (_nationalIdController.text.length < 14
-            ? appLocalization.errorEnterCorrectNationalId
+            ? AppGeneralTrans.errorEnterCorrectNationalId
             : null);
 
 

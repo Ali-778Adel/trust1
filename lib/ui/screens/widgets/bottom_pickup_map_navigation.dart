@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:map_launcher/map_launcher.dart';
 
+import '../../../models/utils/themes/app_general_trans.dart';
 import '../../../models/utils/themes/colors.dart';
 
 class BottomSheetPickupMapNavigation extends StatelessWidget{
@@ -41,7 +42,7 @@ class BottomSheetPickupMapNavigation extends StatelessWidget{
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 25),
           child: Text(
-            appLocalization.pickMapTitle,
+            AppGeneralTrans.pickMapTitle,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: UiConstants.colorTitle),
@@ -60,7 +61,7 @@ class BottomSheetPickupMapNavigation extends StatelessWidget{
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text(appLocalization.cancel.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
+              child: Text(AppGeneralTrans.cancel.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
               style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all<Size>(
                       const Size(double.infinity, 45)),

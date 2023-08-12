@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../models/utils/themes/app_general_trans.dart';
+
 class ScreenHome extends StatefulWidget{
   const ScreenHome({Key? key}) : super(key: key);
 
@@ -79,7 +81,7 @@ class _StateScreenHome extends State<ScreenHome>{
                                         );
                                       },
                                       height: 300,
-                                      label: appLocalization.bookAppointment,
+                                      label: AppGeneralTrans.bookAppointment,
                                       icon: SvgPicture.asset('assets/drawable/ic_create_booking.svg'),
                                       backgroundColor: UiConstants.colorRed,
                                       labelColor: Colors.white
@@ -94,7 +96,7 @@ class _StateScreenHome extends State<ScreenHome>{
                                         );
                                       },
                                       height: 200,
-                                      label: appLocalization.orderInquiry,
+                                      label: AppGeneralTrans.orderInquiry,
                                       icon: SvgPicture.asset('assets/drawable/ic_order_inquiry.svg'),
                                       backgroundColor: UiConstants.colorYellow,
                                       labelColor: UiConstants.colorTitle
@@ -115,7 +117,7 @@ class _StateScreenHome extends State<ScreenHome>{
                                           );
                                         },
                                         height: 200,
-                                        label: appLocalization.reservationInquiry,
+                                        label: AppGeneralTrans.reservationInquiry,
                                         icon: Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: SvgPicture.asset('assets/drawable/ic_reservation_inquiry.svg'),
@@ -133,7 +135,7 @@ class _StateScreenHome extends State<ScreenHome>{
                                           );
                                         },
                                         height: 300,
-                                        label: appLocalization.createCertification,
+                                        label: AppGeneralTrans.createCertification,
                                         icon: SvgPicture.asset('assets/drawable/Ic_create_certification.svg'),
                                         backgroundColor: UiConstants.colorBabyBlue,
                                         labelColor: Colors.white

@@ -150,7 +150,7 @@ class _FollowOrdersLoginScreen extends State<FollowOrdersLoginScreen> {
                                   AlwaysStoppedAnimation<Color>(
                                       Colors.white))):
                           Text(
-                            appLocalization.login.toUpperCase(),
+                            AppGeneralTrans.login.toUpperCase(),
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold),
                           ),

@@ -3,6 +3,7 @@ import 'package:fl_egypt_trust/models/utils/language/localizations_delegate.dart
 import 'package:fl_egypt_trust/models/utils/themes/ui_constants.dart';
 import 'package:flutter/material.dart';
 
+import '../../../models/utils/themes/app_general_trans.dart';
 import '../../../models/utils/themes/colors.dart';
 
 class BottomSheetMessageNotification extends StatelessWidget{
@@ -59,7 +60,7 @@ class BottomSheetMessageNotification extends StatelessWidget{
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text(appLocalization.ok.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
+              child: Text(AppGeneralTrans.ok.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
               style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all<Size>(
                       const Size(double.infinity, 45)),

@@ -16,6 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../../models/utils/themes/app_general_trans.dart';
 import '../../../../../../models/utils/themes/colors.dart';
 import '../../../../widgets/custom_app_bar.dart';
 import '../../../redesign_home/pages/new_home_screen.dart';
@@ -60,7 +61,7 @@ class _StateScreenOrderInquiry extends State<ScreenOrderInquiry> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 50.0),
                       child: Text(
-                        appLocalization.orderInquiryMessage,
+                        AppGeneralTrans.orderInquiryMessage,
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyText1?.copyWith(
                             fontWeight: FontWeight.bold,
@@ -89,7 +90,7 @@ class _StateScreenOrderInquiry extends State<ScreenOrderInquiry> {
                         decoration: InputDecoration(
                           errorMaxLines: 3,
                           errorText: _errorNational ?? state.searchFailMessage,
-                          labelText: appLocalization.nationalId,
+                          labelText: AppGeneralTrans.nationalId,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -113,7 +114,7 @@ class _StateScreenOrderInquiry extends State<ScreenOrderInquiry> {
                           },
                           child: state.isSearchLoading == true
                               ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                              : Text(appLocalization.search.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
+                              : Text(AppGeneralTrans.search.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
                           style: ButtonStyle(
                               minimumSize: MaterialStateProperty.all<Size>(
                                   Size(state.isSearchLoading == true ? 45 : double.infinity, 45)),
@@ -149,9 +150,9 @@ class _StateScreenOrderInquiry extends State<ScreenOrderInquiry> {
 
 
     _errorNational = _nationalIdController.text.isEmpty == true
-        ? appLocalization.errorEnterNationalId
+        ? AppGeneralTrans.errorEnterNationalId
         : (_nationalIdController.text.length < 14
-            ? appLocalization.errorEnterCorrectNationalId
+            ? AppGeneralTrans.errorEnterCorrectNationalId
             : null);
 
 

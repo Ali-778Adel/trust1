@@ -5,6 +5,7 @@ import 'package:fl_egypt_trust/models/utils/language/localizations_delegate.dart
 import 'package:fl_egypt_trust/models/utils/settings/settings_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../utils/themes/app_general_trans.dart';
 
 class PrefSettingsModelCubit extends Cubit<PrefSettingsModel> {
   PrefSettingsModelCubit(PrefSettingsModel initialState)
@@ -23,7 +24,7 @@ class PrefSettingsModelCubit extends Cubit<PrefSettingsModel> {
     if(notify){
 
       emit(PrefSettingsModel(currentLocale : Locale(language.localeValue()),currentThemeMode :state.currentThemeMode));
-      appLocalization = AppLocalizationsDelegate.instance();
+      // AppGeneralTrans = AppGeneralTranssDelegate.instance();
     }
 
   }
@@ -33,7 +34,7 @@ class PrefSettingsModelCubit extends Cubit<PrefSettingsModel> {
     EnumLanguage newLng = (lang == EnumLanguage.arabic ? EnumLanguage.english : EnumLanguage.arabic);
     AppPreference.instance.setLocale(newLng);
     emit(PrefSettingsModel(currentLocale : Locale(newLng.localeValue()),currentThemeMode : state.currentThemeMode));
-    appLocalization = AppLocalizationsDelegate.instance();
+    // AppGeneralTrans = AppGeneralTranssDelegate.instance();
   }
 
   getCurrentLocale({bool notify = true}) async {

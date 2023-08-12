@@ -3,6 +3,7 @@ import 'package:fl_egypt_trust/models/utils/language/localizations_delegate.dart
 
 import '../../entities/public_entities/branch_model.dart';
 import '../../entities/public_entities/city_model.dart';
+import '../../utils/themes/app_general_trans.dart';
 
 class BranchesCubitState {
   List<CityData>? allCities;
@@ -23,7 +24,7 @@ class BranchesCubitState {
           List<BranchData>? cityBranches,
           bool? isCitiesLoading,
           }){
-    allCities?.insert(0, CityData(cityName: appLocalization.allCities));
+    allCities?.insert(0, CityData(cityName: AppGeneralTrans.allCities));
     return BranchesCubitState(
         allCities: this.allCities ??  allCities,
     cityBranches: cityBranches ?? this.cityBranches,

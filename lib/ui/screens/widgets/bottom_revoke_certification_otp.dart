@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../../../models/utils/themes/app_general_trans.dart';
 import '../../../models/utils/themes/colors.dart';
 
 class BottomSheetRevokeCertificationOtp extends StatefulWidget {
@@ -71,7 +72,7 @@ class BottomSheetRevokeCertificationOtp extends StatefulWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                 child: Text(
-                 appLocalization.revokeCertificationOtpMessage,
+                 AppGeneralTrans.revokeCertificationOtpMessage,
 
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.bold,
@@ -128,7 +129,7 @@ class BottomSheetRevokeCertificationOtp extends StatefulWidget {
                         Navigator.of(context).pop();
                       },
                       child: Text(
-                        appLocalization.back.toUpperCase(),
+                        AppGeneralTrans.back.toUpperCase(),
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
@@ -165,7 +166,7 @@ class BottomSheetRevokeCertificationOtp extends StatefulWidget {
                           },
                           child: state.isRevokeActionLoading == true
                               ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                              : Text(appLocalization.revokeCertification.toUpperCase(),style:  Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
+                              : Text(AppGeneralTrans.revokeCertification.toUpperCase(),style:  Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
                           style: ButtonStyle(
                               minimumSize: MaterialStateProperty.all<Size>(
                                   Size(state.isRevokeActionLoading == true ? 45 : double.infinity, 45)),
@@ -197,7 +198,7 @@ class BottomSheetRevokeCertificationOtp extends StatefulWidget {
 
 
     Future<bool> _validate()  async{
-      _errorOtp = _otpController.text.length < 5 ?appLocalization.errorEnterOtp : null;
+      _errorOtp = _otpController.text.length < 5 ?AppGeneralTrans.errorEnterOtp : null;
 
       setState(() {});
       return _errorOtp == null ;

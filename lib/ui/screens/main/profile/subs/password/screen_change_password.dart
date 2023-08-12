@@ -11,6 +11,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 
+import '../../../../../../models/utils/themes/app_general_trans.dart';
+
 
 class ScreenChangePassword extends StatefulWidget {
 
@@ -38,7 +40,7 @@ class _StateScreenChangePassword extends State<ScreenChangePassword> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: CustomAppBar(context: context,pageTitle: appLocalization.changePassword,onPop: ()=>Navigator.pop(context)).call(),
+      appBar: CustomAppBar(context: context,pageTitle: AppGeneralTrans.changePassword,onPop: ()=>Navigator.pop(context)).call(),
       body: BlocBuilder<AuthCubit, AuthCubitState>(
           builder: (context, state) {
           return IgnorePointer(
@@ -78,7 +80,7 @@ class _StateScreenChangePassword extends State<ScreenChangePassword> {
                                   ? Icons.visibility
                                   : Icons.visibility_off)),
                           errorText: _errorOldPassword,
-                          labelText: appLocalization.password,
+                          labelText: AppGeneralTrans.password,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -118,7 +120,7 @@ class _StateScreenChangePassword extends State<ScreenChangePassword> {
                                   ? Icons.visibility
                                   : Icons.visibility_off)),
                           errorText: _errorNewPassword ,
-                          labelText: appLocalization.newPassword,
+                          labelText: AppGeneralTrans.newPassword,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -158,7 +160,7 @@ class _StateScreenChangePassword extends State<ScreenChangePassword> {
                                   ? Icons.visibility
                                   : Icons.visibility_off)),
                           errorText: _errorConfirmPassword ,
-                          labelText: appLocalization.confirmPassword,
+                          labelText: AppGeneralTrans.confirmPassword,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -183,7 +185,7 @@ class _StateScreenChangePassword extends State<ScreenChangePassword> {
                           },
                           child: state.isLoginLoading == true
                               ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                              : Text(appLocalization.changePassword.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white,fontSize: 18),),
+                              : Text(AppGeneralTrans.changePassword.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white,fontSize: 18),),
                           style: ButtonStyle(
                               minimumSize: MaterialStateProperty.all<Size>(
                                   Size(state.isLoginLoading == true ? 45 : double.infinity, 45)),
@@ -218,13 +220,13 @@ class _StateScreenChangePassword extends State<ScreenChangePassword> {
   Future<bool> _validate()  async{
 
 
-    _errorOldPassword = _oldPasswordController.text.isEmpty == true ? appLocalization.errorEnterCurrentPassword : null;
+    _errorOldPassword = _oldPasswordController.text.isEmpty == true ? AppGeneralTrans.errorEnterCurrentPassword : null;
 
-    _errorNewPassword = _newPasswordController.text.isEmpty == true ? appLocalization.errorEnterNewPassword : null;
+    _errorNewPassword = _newPasswordController.text.isEmpty == true ? AppGeneralTrans.errorEnterNewPassword : null;
 
     _errorConfirmPassword = _confirmPasswordController.text.isEmpty == true
-        ? appLocalization.errorEnterConfirmPassword
-        : (_confirmPasswordController.text != _newPasswordController.text ? appLocalization.errorMismatchPassword : null);
+        ? AppGeneralTrans.errorEnterConfirmPassword
+        : (_confirmPasswordController.text != _newPasswordController.text ? AppGeneralTrans.errorMismatchPassword : null);
 
 
 

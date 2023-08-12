@@ -7,6 +7,8 @@ import 'package:fl_egypt_trust/models/utils/themes/colors.dart';
 import 'package:fl_egypt_trust/models/utils/themes/ui_constants.dart';
 import 'package:flutter/material.dart';
 
+import '../../../models/utils/themes/app_general_trans.dart';
+
 class BottomSheetMessageConfirmation extends StatefulWidget {
   final String message, title;
   final int initTime;
@@ -126,7 +128,7 @@ class BottomSheetMessageConfirmation extends StatefulWidget {
                   Navigator.of(context).pop();
                 },
                 child: Text(
-                  appLocalization.cancel.toUpperCase(),
+                  AppGeneralTrans.cancel.toUpperCase(),
                   style:Theme.of(context).textTheme.bodyLarge
                 ),
                 style: ButtonStyle(
@@ -159,7 +161,7 @@ class BottomSheetMessageConfirmation extends StatefulWidget {
                     widget.onPositiveTap?.call();
                   },
                   child: Text(
-                    _timeInSeconds != 0 ? '$_timeInSeconds' : (widget.positiveText == null ? appLocalization.confirm.toUpperCase() : widget.positiveText?.toUpperCase()) ?? '',
+                    _timeInSeconds != 0 ? '$_timeInSeconds' : (widget.positiveText == null ? AppGeneralTrans.confirm.toUpperCase() : widget.positiveText?.toUpperCase()) ?? '',
                     style:Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
                   style: ButtonStyle(
                       minimumSize: MaterialStateProperty.all<Size>( Size(_timeInSeconds != 0 ? 45 : double.infinity, 45)),

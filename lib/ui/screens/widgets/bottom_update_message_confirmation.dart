@@ -7,6 +7,7 @@ import 'package:fl_egypt_trust/models/utils/themes/ui_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:open_store/open_store.dart';
 
+import '../../../models/utils/themes/app_general_trans.dart';
 import '../../../models/utils/themes/colors.dart';
 
 class BottomSheetUpdateMessageConfirmation extends StatefulWidget {
@@ -64,7 +65,7 @@ class BottomSheetUpdateMessageConfirmation extends StatefulWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
             child: Text(
-             appLocalization.appUpdate,
+             AppGeneralTrans.appUpdate,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: UiConstants.colorTitle),
@@ -94,7 +95,7 @@ class BottomSheetUpdateMessageConfirmation extends StatefulWidget {
                     Navigator.of(context).pop();
                   },
                   child: Text(
-                    appLocalization.next.toUpperCase(),
+                    AppGeneralTrans.next.toUpperCase(),
                     style:  Theme.of(context).textTheme.bodyLarge
                   ),
                   style: ButtonStyle(
@@ -126,7 +127,7 @@ class BottomSheetUpdateMessageConfirmation extends StatefulWidget {
                     );
                   },
                   child: Text(
-                    appLocalization.update.toUpperCase(),
+                    AppGeneralTrans.update.toUpperCase(),
                     style:  Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white)
                   ),
                   style: ButtonStyle(

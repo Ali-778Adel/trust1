@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../../models/entities/public_entities/certification_type_model.dart';
+import '../../../../../../models/utils/themes/app_general_trans.dart';
 
 class CertificationDocumentsView extends StatefulWidget {
   final CertificationTypeModel selectedCertification;
@@ -62,7 +63,7 @@ class _CertificationDocumentsView extends State<CertificationDocumentsView> {
                         }
                       },
                       child: Text(
-                        appLocalization.view.toUpperCase(),
+                        AppGeneralTrans.view.toUpperCase(),
                         style: Theme.of(context)
                             .textTheme
                             .bodyMedium
@@ -89,7 +90,7 @@ class _CertificationDocumentsView extends State<CertificationDocumentsView> {
                       });
                     },
                     child: Text(
-                      appLocalization.addAnotherDocument.toUpperCase(),
+                      AppGeneralTrans.addAnotherDocument.toUpperCase(),
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     style: ButtonStyle(
@@ -191,7 +192,7 @@ class _CertificationDocumentsView extends State<CertificationDocumentsView> {
             style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.black),
             decoration: InputDecoration(
               errorText: doc.error,
-              labelText: appLocalization.documentNameRequired,
+              labelText: AppGeneralTrans.documentNameRequired,
               fillColor: Colors.white,
               filled: true,
               enabledBorder: const UnderlineInputBorder(

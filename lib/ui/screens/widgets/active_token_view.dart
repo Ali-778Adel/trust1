@@ -7,6 +7,8 @@ import 'package:fl_egypt_trust/ui/screens/main/profile/subs/activate_token/scree
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../models/utils/themes/app_general_trans.dart';
+
 class ActivateTokenView extends StatelessWidget {
   final VoidCallback? onActivateTokenTap;
 
@@ -28,7 +30,7 @@ class ActivateTokenView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  appLocalization.newInEgyptTrust,
+                  AppGeneralTrans.newInEgyptTrust,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: UiConstants.colorTitle),
@@ -37,7 +39,7 @@ class ActivateTokenView extends StatelessWidget {
                   height: 8,
                 ),
                 Text(
-                  appLocalization.newInEgyptTrustHint,
+                  AppGeneralTrans.newInEgyptTrustHint,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                        color: UiConstants.colorHint),
                 ),
@@ -58,7 +60,7 @@ class ActivateTokenView extends StatelessWidget {
                             );
                           },
                       child: Text(
-                          appLocalization.activateTokenPin.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
+                          AppGeneralTrans.activateTokenPin.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
                       style: ButtonStyle(
                           minimumSize: MaterialStateProperty.all<Size>(
                               const Size(double.infinity, 45)),
@@ -91,7 +93,7 @@ class ActivateTokenView extends StatelessWidget {
       //   mainAxisSize: MainAxisSize.max,
       //   children: [
       //     Text(
-      //       appLocalization.welcome,
+      //       AppGeneralTrans.welcome,
       //       style: Theme.of(context).textTheme.headline4?.copyWith(
       //           fontWeight: FontWeight.bold,
       //           color: UiConstants.colorPrimary),

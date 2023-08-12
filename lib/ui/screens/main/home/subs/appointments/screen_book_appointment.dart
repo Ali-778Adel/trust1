@@ -19,6 +19,7 @@ import '../../../../../../models/entities/public_entities/branch_model.dart';
 import '../../../../../../models/entities/public_entities/city_model.dart';
 import '../../../../../../models/entities/public_entities/reservation_model.dart';
 import '../../../../../../models/entities/public_entities/service_type.dart';
+import '../../../../../../models/utils/themes/app_general_trans.dart';
 
 class ScreenBookAppointment extends StatefulWidget {
   final String? orderNumber;
@@ -82,7 +83,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
       child: Scaffold(
         appBar: AppBar(
           systemOverlayStyle: SystemUiOverlayStyle.dark,
-          title: Text(widget.reservationModel == null ? appLocalization.bookAppointment : appLocalization.editReservation),
+          title: Text(widget.reservationModel == null ? AppGeneralTrans.bookAppointment : AppGeneralTrans.editReservation),
         ),
         body: BlocBuilder<AppointmentCubit, AppointmentCubitState>(
             builder: (context, state) {
@@ -114,7 +115,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
                                       fontWeight: FontWeight.bold),
                                   decoration: InputDecoration(
                                     labelStyle: Theme.of(context).textTheme.subtitle1,
-                                    labelText: appLocalization.orderNumber,
+                                    labelText: AppGeneralTrans.orderNumber,
                                     fillColor: UiConstants.colorTextFieldFill,
                                     filled: true,
                                     disabledBorder:  OutlineInputBorder(
@@ -138,7 +139,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
                                 maxLength: 20,
                                 decoration: InputDecoration(
                                   errorText: _errorName,
-                                  labelText: appLocalization.name,
+                                  labelText: AppGeneralTrans.name,
                                   fillColor: UiConstants.colorTextFieldFill,
                                   filled: true,
                                   enabledBorder: const UnderlineInputBorder(
@@ -162,7 +163,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
                               maxLength: 14,
                               decoration: InputDecoration(
                                 errorText: _errorNumber,
-                                labelText: appLocalization.mobileNumber,
+                                labelText: AppGeneralTrans.mobileNumber,
                                 fillColor: UiConstants.colorTextFieldFill,
                                 filled: true,
                                 enabledBorder: const UnderlineInputBorder(
@@ -185,7 +186,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
                               maxLength: 14,
                               decoration: InputDecoration(
                                 errorText: _errorNational,
-                                labelText: appLocalization.nationalId,
+                                labelText: AppGeneralTrans.nationalId,
                                 fillColor: UiConstants.colorTextFieldFill,
                                 filled: true,
                                 enabledBorder: const UnderlineInputBorder(
@@ -212,7 +213,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
                                       // ),
 
                                       errorText: _errorCity,
-                                      labelText: appLocalization.selectCity,
+                                      labelText: AppGeneralTrans.selectCity,
                                       fillColor: UiConstants.colorTextFieldFill,
                                       filled: true,
                                       enabledBorder: const UnderlineInputBorder(
@@ -268,7 +269,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
 
                                       errorText: _errorBranch,
                                       enabled: _selectedCity != null,
-                                      labelText: appLocalization.selectBranch,
+                                      labelText: AppGeneralTrans.selectBranch,
                                       fillColor: UiConstants.colorTextFieldFill,
                                       filled: true,
                                       errorBorder: const UnderlineInputBorder(
@@ -333,7 +334,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
                                       // ),
                                       errorText: _errorService,
                                       enabled: _selectedBranch != null,
-                                      labelText: appLocalization.selectServiceType,
+                                      labelText: AppGeneralTrans.selectServiceType,
                                       fillColor: UiConstants.colorTextFieldFill,
                                       filled: true,
                                       errorBorder: const UnderlineInputBorder(
@@ -403,7 +404,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
                                           ? state.availableTimeMessage
                                           : null),
                                   suffixIcon: const Icon(Icons.date_range),
-                                  labelText: appLocalization.pickupDate,
+                                  labelText: AppGeneralTrans.pickupDate,
                                   fillColor: UiConstants.colorTextFieldFill,
                                   filled: true,
                                   enabledBorder: const UnderlineInputBorder(
@@ -434,7 +435,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
                                       errorText: _errorTime,
                                       enabled:
                                       _dateController.text.isNotEmpty == true,
-                                      labelText: appLocalization.selectVisitTime,
+                                      labelText: AppGeneralTrans.selectVisitTime,
                                       fillColor: UiConstants.colorTextFieldFill,
                                       errorBorder: const UnderlineInputBorder(
                                         borderSide: BorderSide(
@@ -503,7 +504,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
                         },
                         child: state.isSubmittingLoading == true
                             ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                        : Text(widget.reservationModel == null ? appLocalization.reserve.toUpperCase() : appLocalization.editReservation.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
+                        : Text(widget.reservationModel == null ? AppGeneralTrans.reserve.toUpperCase() : AppGeneralTrans.editReservation.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
                         style: ButtonStyle(
                             minimumSize: MaterialStateProperty.all<Size>(
                                  Size(state.isSubmittingLoading == true ? 45 : double.infinity, 45)),
@@ -532,7 +533,7 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
                         },
                         child: state.isCancelLoading == true
                             ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                            : Text(appLocalization.cancelReservation.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
+                            : Text(AppGeneralTrans.cancelReservation.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
                         style: ButtonStyle(
                             minimumSize: MaterialStateProperty.all<Size>(
                                 Size(state.isCancelLoading == true ? 45 : double.infinity, 45)),
@@ -663,33 +664,33 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
 
   bool _validate()  {
     _errorName = _nameController.text.isEmpty == true
-        ? appLocalization.errorEnterName
+        ? AppGeneralTrans.errorEnterName
         : null;
     _errorNumber = _mobileController.text.isEmpty == true
-        ? appLocalization.errorEnterMobile
+        ? AppGeneralTrans.errorEnterMobile
         : (_mobileController.text.length < 11 ||
                 _mobileController.text.startsWith('01') == false
-            ? appLocalization.errorEnterCorrectMobile
+            ? AppGeneralTrans.errorEnterCorrectMobile
             : null);
 
     _errorNational = _nationalIdController.text.isEmpty == true
-        ? appLocalization.errorEnterNationalId
+        ? AppGeneralTrans.errorEnterNationalId
         : (_nationalIdController.text.length < 14
-            ? appLocalization.errorEnterCorrectNationalId
+            ? AppGeneralTrans.errorEnterCorrectNationalId
             : null);
 
-    _errorCity = _selectedCity == null ? appLocalization.errorSelectCity : null;
+    _errorCity = _selectedCity == null ? AppGeneralTrans.errorSelectCity : null;
     _errorBranch =
-        _selectedBranch == null ? appLocalization.errorSelectBranch : null;
+        _selectedBranch == null ? AppGeneralTrans.errorSelectBranch : null;
     _errorService =
-        _selectedService == null ? appLocalization.errorSelectService : null;
+        _selectedService == null ? AppGeneralTrans.errorSelectService : null;
 
     _errorDate = _dateController.text.isEmpty == true
-        ? appLocalization.errorPickupDate
+        ? AppGeneralTrans.errorPickupDate
         : null;
 
     _errorTime = _selectedVisitTime == null
-        ? appLocalization.errorSelectVisitTime
+        ? AppGeneralTrans.errorSelectVisitTime
         : null;
     setState(() {});
     return _errorName == null &&
@@ -757,9 +758,9 @@ class _StateScreenBookAppointment extends State<ScreenBookAppointment> {
       await BottomSheetMessageConfirmation.show(
         context,
         initTime : 0,
-        title: appLocalization.unsavedChangesTitle,
-        message: appLocalization.unsavedChangesMessage,
-        positiveText: appLocalization.discard,
+        title: AppGeneralTrans.unsavedChangesTitle,
+        message: AppGeneralTrans.unsavedChangesMessage,
+        positiveText: AppGeneralTrans.discard,
         onPositiveTap: (){
           Navigator.of(context).pop();
         },

@@ -15,6 +15,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:local_auth/error_codes.dart' as auth_error;
 
+import '../../../../../../models/utils/themes/app_general_trans.dart';
 import '../../../../../../models/utils/themes/colors.dart';
 import '../../../../widgets/custom_app_bar.dart';
 
@@ -51,7 +52,7 @@ class _StateScreenLogin extends State<ScreenLogin> {
     if (loginInfo != null) {
       try {
         bool didAuthenticate = await localAuth.authenticate(
-            localizedReason: appLocalization.easyLoginMessage);
+            localizedReason: AppGeneralTrans.easyLoginMessage);
         if (didAuthenticate) {
           _mobileController.text = loginInfo.key;
           _passwordController.text = loginInfo.value;
@@ -72,7 +73,7 @@ class _StateScreenLogin extends State<ScreenLogin> {
         appBar: CustomAppBar(
                 context: context,
                 onPop: ()=>Navigator.pop(context),
-                pageTitle: appLocalization.login.toUpperCase())
+                pageTitle: AppGeneralTrans.login.toUpperCase())
             .call(),
         body: SafeArea(
           child: Stack(
@@ -124,7 +125,7 @@ class _StateScreenLogin extends State<ScreenLogin> {
                               textInputAction: TextInputAction.next,
                               decoration: InputDecoration(
                                 errorText: _errorNumber,
-                                labelText: appLocalization.mobileNumber,
+                                labelText: AppGeneralTrans.mobileNumber,
                                 fillColor: Colors.white,
                                 filled: true,
                                 enabledBorder: const UnderlineInputBorder(
@@ -163,7 +164,7 @@ class _StateScreenLogin extends State<ScreenLogin> {
                                         : Icons.visibility_off)),
                                 errorText:
                                     _errorPassword ?? state.loginErrorMessage,
-                                labelText: appLocalization.password,
+                                labelText: AppGeneralTrans.password,
                                 fillColor: Colors.white,
                                 filled: true,
                                 enabledBorder: const UnderlineInputBorder(
@@ -185,7 +186,7 @@ class _StateScreenLogin extends State<ScreenLogin> {
                               );
                             },
                             child: Text(
-                              appLocalization.forgotPassword,
+                              AppGeneralTrans.forgotPassword,
                               style:
                                   Theme.of(context).textTheme.button?.copyWith(
                                         fontWeight: FontWeight.bold,
@@ -218,7 +219,7 @@ class _StateScreenLogin extends State<ScreenLogin> {
                                                 AlwaysStoppedAnimation<Color>(
                                                     Colors.white)))
                                     : Text(
-                                        appLocalization.login.toUpperCase(),
+                                        AppGeneralTrans.login.toUpperCase(),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -258,14 +259,14 @@ class _StateScreenLogin extends State<ScreenLogin> {
 
   Future<bool> _validate() async {
     _errorNumber = _mobileController.text.isEmpty == true
-        ? appLocalization.errorEnterMobile
+        ? AppGeneralTrans.errorEnterMobile
         : (_mobileController.text.length < 11 ||
                 _mobileController.text.startsWith('01') == false
-            ? appLocalization.errorEnterCorrectMobile
+            ? AppGeneralTrans.errorEnterCorrectMobile
             : null);
 
     _errorPassword = _passwordController.text.isEmpty == true
-        ? appLocalization.errorEnterPassword
+        ? AppGeneralTrans.errorEnterPassword
         : null;
 
     setState(() {});

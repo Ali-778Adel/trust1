@@ -124,12 +124,12 @@ class MyApp extends StatelessWidget {
               return OKToast(
                 child: MaterialApp(
                     navigatorKey: navigatorKey,
-                    locale: state.currentLocale ??
+                    locale:  state.currentLocale ??
                         Locale(EnumLanguage.arabic.localeValue()),
                     localizationsDelegates:
-                        AppLocalizationsDelegate.localizationsDelegates,
+                    AppLocalizationsDelegate.localizationsDelegates,
                     localeResolutionCallback:
-                        AppLocalizationsDelegate.localeResolutionCallback,
+                    AppLocalizationsDelegate.localeResolutionCallback,
                     themeMode: state.currentThemeMode,
                     theme: lightTheme,
                     debugShowCheckedModeBanner: false,

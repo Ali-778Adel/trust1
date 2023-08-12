@@ -19,9 +19,9 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<Languages> {
 
   @override
   bool isSupported(Locale locale) => [
-        EnumLanguage.english.localeValue(),
-        EnumLanguage.arabic.localeValue()
-      ].contains(locale.languageCode);
+    EnumLanguage.english.localeValue(),
+    EnumLanguage.arabic.localeValue()
+  ].contains(locale.languageCode);
 
   @override
   Future<Languages> load(Locale locale) {

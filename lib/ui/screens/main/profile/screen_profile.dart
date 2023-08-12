@@ -122,7 +122,7 @@ class _StateScreenProfile extends State<ScreenProfile> {
                                           onTap: (){
                                             String phone = '+201000759637';
 
-                                            Utilities.openWhatsApp(context, phone , whatsAppNotInstalled: appLocalization.whatsAppNotInstalledMessage);
+                                            Utilities.openWhatsApp(context, phone , whatsAppNotInstalled: AppGeneralTrans.whatsAppNotInstalledMessage);
                                           }
                                       ),
 
@@ -230,7 +230,7 @@ class _StateScreenProfile extends State<ScreenProfile> {
                                                     });
                                                   }
                                                   else{
-                                                    if(snap.data![0].val=='0'){
+                                                    if(snap.data![0].val=='1'){
                                                       showCupertinoModalPopup(
                                                           context: context, builder: (context){
                                                         return Center(
@@ -320,7 +320,7 @@ class _StateScreenProfile extends State<ScreenProfile> {
                                       if(state.userData == null)
                                         _buildAction(
                                             icon: AppIcons.loginIcon,
-                                            title: appLocalization.login,
+                                            title: AppGeneralTrans.login,
                                             onTap: (){
                                               Navigator.push(
                                                 context,
@@ -362,9 +362,9 @@ class _StateScreenProfile extends State<ScreenProfile> {
      BottomSheetMessageConfirmation.show(
       context,
       initTime : 0,
-      title: appLocalization.logout,
-      message: appLocalization.logoutMessage,
-      positiveText: appLocalization.logout,
+      title: AppGeneralTrans.logout,
+      message: AppGeneralTrans.logoutMessage,
+      positiveText: AppGeneralTrans.logout,
       onPositiveTap: (){
         context.read<AuthCubit>().logout();
       },

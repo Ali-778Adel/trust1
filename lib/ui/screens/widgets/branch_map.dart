@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:map_launcher/map_launcher.dart'as launcher;
 
+import '../../../models/utils/themes/app_general_trans.dart';
+
 
 class BranchMapWidget extends StatelessWidget {
   final BranchesModel branchData;
@@ -82,7 +84,7 @@ class BranchMapWidget extends StatelessWidget {
                       icon: const Icon(Icons.near_me_rounded),
                       backgroundColor: UiConstants.colorBabyBlue,
                       label: Text(
-                        appLocalization.navigation,
+                        AppGeneralTrans.navigation,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: UiConstants.colorTitle),

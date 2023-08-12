@@ -59,7 +59,7 @@ class _StateScreenActivateTokenPhone extends State<ScreenActivateTokenPhone> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 50.0),
                       child: Text(
-                        appLocalization.enterMobileHint,
+                        AppGeneralTrans.enterMobileHint,
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyText1?.copyWith(
                             fontWeight: FontWeight.bold,
@@ -87,7 +87,7 @@ class _StateScreenActivateTokenPhone extends State<ScreenActivateTokenPhone> {
                         decoration: InputDecoration(
                           errorStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.colorRed),
                           errorText: _errorNumber,
-                          labelText: appLocalization.mobileNumber,
+                          labelText: AppGeneralTrans.mobileNumber,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -111,7 +111,7 @@ class _StateScreenActivateTokenPhone extends State<ScreenActivateTokenPhone> {
                           },
                           child: state.isLoginLoading == true
                               ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                              : Text(appLocalization.next.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
+                              : Text(AppGeneralTrans.next.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
                           style: ButtonStyle(
                               minimumSize: MaterialStateProperty.all<Size>(
                                   Size(state.isLoginLoading == true ? 45 : double.infinity, 45)),
@@ -147,10 +147,10 @@ class _StateScreenActivateTokenPhone extends State<ScreenActivateTokenPhone> {
 
 
     _errorNumber = _mobileController.text.isEmpty == true
-        ? appLocalization.errorEnterMobile
+        ? AppGeneralTrans.errorEnterMobile
         : (_mobileController.text.length < 11 ||
         _mobileController.text.startsWith('01') == false
-        ? appLocalization.errorEnterCorrectMobile
+        ? AppGeneralTrans.errorEnterCorrectMobile
         : null);
 
 

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../models/utils/themes/app_general_trans.dart';
 import '../../../../models/utils/themes/colors.dart';
 import '../../widgets/custom_app_bar.dart';
 
@@ -49,7 +50,7 @@ class _StateScreenActiveCertification extends State<ScreenActiveCertification> {
                 // Padding(
                 //   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 //   child: Text(
-                //     appLocalization.myActiveCertification.toUpperCase(),
+                //     AppGeneralTrans.myActiveCertification.toUpperCase(),
                 //     style: Theme.of(context).textTheme.headline6?.copyWith(
                 //         fontWeight: FontWeight.bold,
                 //         color: UiConstants.colorPrimary),
@@ -97,7 +98,7 @@ class _NotAuthorizedView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            appLocalization.activeCertificationsPreLoginMessage,
+            AppGeneralTrans.activeCertificationsPreLoginMessage,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyText1?.copyWith(color: UiConstants.colorTitle),
           ),
@@ -108,7 +109,7 @@ class _NotAuthorizedView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: TextButton(
               onPressed: onLoginTap,
-              child: Text(appLocalization.login.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
+              child: Text(AppGeneralTrans.login.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
               style: ButtonStyle(
                   minimumSize:
                       MaterialStateProperty.all<Size>(const Size(200, 45)),

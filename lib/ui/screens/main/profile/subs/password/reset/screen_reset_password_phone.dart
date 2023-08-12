@@ -16,6 +16,7 @@ import 'package:fl_egypt_trust/ui/screens/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../../../models/utils/themes/app_general_trans.dart';
 import '../../../../../../../models/utils/themes/colors.dart';
 
 
@@ -41,7 +42,7 @@ class _StateScreenResetPasswordPhone extends State<ScreenResetPasswordPhone> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar:CustomAppBar(context: context,pageTitle: appLocalization.resetPassword,onPop: ()=>Navigator.pop(context)).call(),
+      appBar:CustomAppBar(context: context,pageTitle: AppGeneralTrans.resetPassword,onPop: ()=>Navigator.pop(context)).call(),
       body: BlocBuilder<AuthCubit, AuthCubitState>(
           builder: (context, state) {
           return IgnorePointer(
@@ -55,7 +56,7 @@ class _StateScreenResetPasswordPhone extends State<ScreenResetPasswordPhone> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 50.0),
                       child: Text(
-                        appLocalization.enterMobileHint,
+                        AppGeneralTrans.enterMobileHint,
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             fontWeight: FontWeight.bold,
@@ -82,7 +83,7 @@ class _StateScreenResetPasswordPhone extends State<ScreenResetPasswordPhone> {
                         decoration: InputDecoration(
                           errorStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.colorRed),
                           errorText: _errorNumber,
-                          labelText: appLocalization.mobileNumber,
+                          labelText: AppGeneralTrans.mobileNumber,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -106,7 +107,7 @@ class _StateScreenResetPasswordPhone extends State<ScreenResetPasswordPhone> {
                           },
                           child: state.isLoginLoading == true
                               ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                              : Text(appLocalization.next.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
+                              : Text(AppGeneralTrans.next.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
                           style: ButtonStyle(
                               minimumSize: MaterialStateProperty.all<Size>(
                                   Size(state.isLoginLoading == true ? 45 : double.infinity, 45)),
@@ -142,10 +143,10 @@ class _StateScreenResetPasswordPhone extends State<ScreenResetPasswordPhone> {
 
 
     _errorNumber = _mobileController.text.isEmpty == true
-        ? appLocalization.errorEnterMobile
+        ? AppGeneralTrans.errorEnterMobile
         : (_mobileController.text.length < 11 ||
         _mobileController.text.startsWith('01') == false
-        ? appLocalization.errorEnterCorrectMobile
+        ? AppGeneralTrans.errorEnterCorrectMobile
         : null);
 
 

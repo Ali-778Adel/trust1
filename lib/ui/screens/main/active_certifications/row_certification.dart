@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 
 import '../../../../models/entities/public_entities/certification_model.dart';
+import '../../../../models/utils/themes/app_general_trans.dart';
 import '../../../../models/utils/themes/colors.dart';
 import '../../../../models/utils/themes/colors.dart';
 import '../../../../models/utils/themes/colors.dart';
@@ -94,10 +95,10 @@ class RowCertification extends StatelessWidget {
                     flex: 1,
                     child: TextButton(
                       onPressed: () {
-                        BottomSheetMessageConfirmation.show(context, title: appLocalization.requestPinTitle, message: appLocalization.requestPinMessage, onPositiveTap: onRequestPinTap);
+                        BottomSheetMessageConfirmation.show(context, title: AppGeneralTrans.requestPinTitle, message: AppGeneralTrans.requestPinMessage, onPositiveTap: onRequestPinTap);
                       },
                       child: Text(
-                        appLocalization.requestPin.toUpperCase(),
+                        AppGeneralTrans.requestPin.toUpperCase(),
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
 
@@ -125,10 +126,10 @@ class RowCertification extends StatelessWidget {
                     flex: 1,
                     child: TextButton(
                       onPressed: () {
-                        BottomSheetCertificationRevokeConfirmation.show(context, title: appLocalization.revokeTitle, message: appLocalization.revokeMessage, onPositiveTap: onRevokeTap, positiveText: appLocalization.revokeCertification);
+                        BottomSheetCertificationRevokeConfirmation.show(context, title: AppGeneralTrans.revokeTitle, message: AppGeneralTrans.revokeMessage, onPositiveTap: onRevokeTap, positiveText: AppGeneralTrans.revokeCertification);
                       },
                       child: Text(
-                        appLocalization.revoke.toUpperCase(),
+                        AppGeneralTrans.revoke.toUpperCase(),
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),

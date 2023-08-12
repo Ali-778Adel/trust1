@@ -9,6 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../models/entities/public_entities/user_model.dart';
+import '../../models/utils/themes/app_general_trans.dart';
 
 class ScreenSplash extends StatefulWidget {
   static String id = '/splash';
@@ -24,7 +25,6 @@ class _ScreenSplashState extends State<ScreenSplash> {
   void initState() {
     super.initState();
 
-    appLocalization = AppLocalizationsDelegate.instance();
     _getUserData();
   }
 

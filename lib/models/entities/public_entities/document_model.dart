@@ -5,7 +5,10 @@ import 'package:fl_egypt_trust/main.dart';
 import 'package:fl_egypt_trust/models/utils/language/localizations_delegate.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:logger/logger.dart';
+import '../../utils/themes/app_general_trans.dart';
+
 part 'document_model.g.dart';
+
 
 @JsonSerializable()
 class DocumentModel {
@@ -37,7 +40,7 @@ class DocumentModel {
   Future<bool> isValidDoc()async{
     error = null;
     if(oRDBase64Doc == null || oRDBase64Doc?.isEmpty == true){
-      error = appLocalization.errorUploadDocumentImage;
+      error = AppGeneralTrans.errorUploadDocumentImage;
       return false;
     }else {
 
@@ -45,13 +48,13 @@ class DocumentModel {
       int fileSize = await ff.length();
       logger.e('file length : $fileSize');
       if(fileSize > _maxFileSize){
-        error = appLocalization.errorDocumentSize;
+        error = AppGeneralTrans.errorDocumentSize;
         return false;
       }
     }
 
     if(oRDName == null || oRDName?.isEmpty == true){
-      error = appLocalization.documentNameRequired;
+      error = AppGeneralTrans.documentNameRequired;
       return false;
     }
 

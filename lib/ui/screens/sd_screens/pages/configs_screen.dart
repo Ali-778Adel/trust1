@@ -204,9 +204,9 @@ class _SDConfigsScreenState extends State<SDConfigsScreen> {
       await BottomSheetMessageConfirmation.show(
         context,
         initTime : 0,
-        title: appLocalization.unsavedChangesTitle,
-        message: appLocalization.unsavedChangesMessage,
-        positiveText: appLocalization.discard,
+        title: AppGeneralTrans.unsavedChangesTitle,
+        message: AppGeneralTrans.unsavedChangesMessage,
+        positiveText: AppGeneralTrans.discard,
         onPositiveTap: (){
            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const HomeNavigationScreen()), (route) => false);
         },

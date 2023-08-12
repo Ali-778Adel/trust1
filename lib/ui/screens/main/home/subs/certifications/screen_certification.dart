@@ -17,6 +17,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:collection/collection.dart';
 
 import '../../../../../../models/entities/public_entities/certification_type_model.dart';
+import '../../../../../../models/utils/themes/app_general_trans.dart';
 import '../../../../../../models/utils/themes/colors.dart';
 import '../../../../widgets/custom_app_bar.dart';
 import '../../../redesign_home/pages/new_home_screen.dart';
@@ -112,7 +113,7 @@ class _StateScreenCertification extends State<ScreenCertification> {
                                       fontWeight: FontWeight.bold),
                                   decoration: InputDecoration(
                                     labelStyle: Theme.of(context).textTheme.bodyMedium,
-                                    labelText: appLocalization.orderNumber,
+                                    labelText: AppGeneralTrans.orderNumber,
                                     fillColor:Palette.white,
                                     filled: true,
                                     disabledBorder:   OutlineInputBorder(
@@ -137,7 +138,7 @@ class _StateScreenCertification extends State<ScreenCertification> {
                                 style: Theme.of(context).textTheme.bodyMedium,
                                 decoration: InputDecoration(
                                   errorText: _errorName,
-                                  labelText: appLocalization.name,
+                                  labelText: AppGeneralTrans.name,
                                   fillColor: UiConstants.colorTextFieldFill,
                                   filled: true,
                                   enabledBorder: const UnderlineInputBorder(
@@ -162,7 +163,7 @@ class _StateScreenCertification extends State<ScreenCertification> {
                               style: Theme.of(context).textTheme.bodyMedium,
                               decoration: InputDecoration(
                                 errorText: _errorNumber,
-                                labelText: appLocalization.mobileNumber,
+                                labelText: AppGeneralTrans.mobileNumber,
                                 fillColor: UiConstants.colorTextFieldFill,
                                 filled: true,
                                 enabledBorder: const UnderlineInputBorder(
@@ -187,7 +188,7 @@ class _StateScreenCertification extends State<ScreenCertification> {
                               enabled: widget.orderModel == null,
                               decoration: InputDecoration(
                                 errorText: _errorNational,
-                                labelText: appLocalization.nationalId,
+                                labelText: AppGeneralTrans.nationalId,
                                 fillColor: UiConstants.colorTextFieldFill,
                                 filled: true,
                                 enabledBorder: const UnderlineInputBorder(
@@ -214,7 +215,7 @@ class _StateScreenCertification extends State<ScreenCertification> {
                                           // maxHeight: 70
                                       // ),
                                       errorText: _errorCertification,
-                                      labelText: appLocalization.selectCertificationType,
+                                      labelText: AppGeneralTrans.selectCertificationType,
                                       fillColor: UiConstants.colorTextFieldFill,
                                       filled: true,
                                       errorBorder: const UnderlineInputBorder(
@@ -293,7 +294,7 @@ class _StateScreenCertification extends State<ScreenCertification> {
                         },
                         child: state.isSubmittingLoading == true
                             ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                        : Text(widget.orderModel == null ? appLocalization.submit.toUpperCase() : appLocalization.editCertification.toUpperCase(),style:Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
+                        : Text(widget.orderModel == null ? AppGeneralTrans.submit.toUpperCase() : AppGeneralTrans.editCertification.toUpperCase(),style:Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
                         style: ButtonStyle(
                             minimumSize: MaterialStateProperty.all<Size>(
                                  Size(state.isSubmittingLoading == true ? 45 : double.infinity, 45)),
@@ -342,24 +343,24 @@ class _StateScreenCertification extends State<ScreenCertification> {
 
   Future<bool> _validate()  async{
     _errorName = _nameController.text.isEmpty == true
-        ? appLocalization.errorEnterName
+        ? AppGeneralTrans.errorEnterName
         : null;
     _errorNumber = _mobileController.text.isEmpty == true
-        ? appLocalization.errorEnterMobile
+        ? AppGeneralTrans.errorEnterMobile
         : (_mobileController.text.length < 11 ||
                 _mobileController.text.startsWith('01') == false
-            ? appLocalization.errorEnterCorrectMobile
+            ? AppGeneralTrans.errorEnterCorrectMobile
             : null);
 
     _errorNational = _nationalIdController.text.isEmpty == true
-        ? appLocalization.errorEnterNationalId
+        ? AppGeneralTrans.errorEnterNationalId
         : (_nationalIdController.text.length < 14
-            ? appLocalization.errorEnterCorrectNationalId
+            ? AppGeneralTrans.errorEnterCorrectNationalId
             : null);
 
 
     _errorCertification =
-        _selectedCertification == null ? appLocalization.errorSelectService : null;
+        _selectedCertification == null ? AppGeneralTrans.errorSelectService : null;
 
     bool docsHaveErrors = false;
     for(var doc in documents){
@@ -410,9 +411,9 @@ class _StateScreenCertification extends State<ScreenCertification> {
       await BottomSheetMessageConfirmation.show(
         context,
         initTime : 0,
-        title: appLocalization.unsavedChangesTitle,
-        message: appLocalization.unsavedChangesMessage,
-        positiveText: appLocalization.discard,
+        title: AppGeneralTrans.unsavedChangesTitle,
+        message: AppGeneralTrans.unsavedChangesMessage,
+        positiveText: AppGeneralTrans.discard,
         onPositiveTap: (){
           Navigator.of(context).pop();
         },

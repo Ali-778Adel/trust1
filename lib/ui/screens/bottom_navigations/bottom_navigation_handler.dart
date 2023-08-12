@@ -2,6 +2,7 @@ import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:fl_egypt_trust/models/bloc/settings_bloc/cubit_seetings_bloc.dart';
 import 'package:fl_egypt_trust/models/utils/language/localizations_delegate.dart';
 import 'package:fl_egypt_trust/models/utils/settings/settings_model.dart';
+import 'package:fl_egypt_trust/models/utils/themes/app_general_trans.dart';
 import 'package:fl_egypt_trust/models/utils/themes/colors.dart';
 import 'package:fl_egypt_trust/ui/screens/main/active_certifications/screen_active_certifications.dart';
 import 'package:fl_egypt_trust/models/utils/themes/ui_constants.dart';
@@ -49,13 +50,13 @@ class _HomeNavigationScreenState extends State<HomeNavigationScreen> {
             currentIndex: _selectedBottomNavigationIndex,
             items: [
               _bottomNavigationBarItem(
-                  defaultIconData: Icons.home, label: appLocalization.home),
+                  defaultIconData: Icons.home, label: AppGeneralTrans.home),
               _bottomNavigationBarItem(
                   defaultIconData: Icons.assignment_rounded,
-                  label: appLocalization.activeCertification),
+                  label: AppGeneralTrans.activeCertification),
               _bottomNavigationBarItem(
                   defaultIconData: Icons.account_circle,
-                  label: appLocalization.profile)
+                  label: AppGeneralTrans.profile)
             ],
             onTap: (index) {
               setState(() {

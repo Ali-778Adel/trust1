@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../models/utils/themes/app_general_trans.dart';
 import '../../../models/utils/themes/colors.dart';
 import 'bottom_message_confirmation.dart';
 import 'package:app_settings/app_settings.dart';
@@ -66,9 +67,9 @@ class BottomSheetPickupType extends StatelessWidget{
         BottomSheetMessageConfirmation.show(
           context,
           initTime : 0,
-          title: appLocalization.permissionsDeniedTitle,
-          message: appLocalization.permissionsDeniedMessage,
-          positiveText: appLocalization.settings,
+          title: AppGeneralTrans.permissionsDeniedTitle,
+          message: AppGeneralTrans.permissionsDeniedMessage,
+          positiveText: AppGeneralTrans.settings,
           onPositiveTap: (){
 
             AppSettings.openAppSettings();
@@ -88,22 +89,22 @@ class BottomSheetPickupType extends StatelessWidget{
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 25),
           child: Text(
-            appLocalization.pickTypeTitle,
+            AppGeneralTrans.pickTypeTitle,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: UiConstants.colorTitle),
           ),
         ),
 
-        _buildAction(context: context , icon: Icons.camera, title: appLocalization.camera, onTap: (){
+        _buildAction(context: context , icon: Icons.camera, title: AppGeneralTrans.camera, onTap: (){
           Navigator.of(context).pop(_PickType.camera);
         }),
 
-        _buildAction(context: context , icon: Icons.image, title: appLocalization.gallery, onTap: (){
+        _buildAction(context: context , icon: Icons.image, title: AppGeneralTrans.gallery, onTap: (){
           Navigator.of(context).pop(_PickType.image);
         }),
 
-        _buildAction(context : context ,icon: Icons.attach_file, title: appLocalization.fileManager, onTap: (){
+        _buildAction(context : context ,icon: Icons.attach_file, title: AppGeneralTrans.fileManager, onTap: (){
           Navigator.of(context).pop(_PickType.file);
         }),
         Padding(
@@ -113,7 +114,7 @@ class BottomSheetPickupType extends StatelessWidget{
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text(appLocalization.cancel.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
+              child: Text(AppGeneralTrans.cancel.toUpperCase(),style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Palette.white),),
               style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all<Size>(
                       const Size(double.infinity, 45)),

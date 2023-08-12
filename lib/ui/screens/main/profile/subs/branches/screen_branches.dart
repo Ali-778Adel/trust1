@@ -36,7 +36,7 @@
 //     return Scaffold(
 //       appBar: AppBar(
 //           systemOverlayStyle: SystemUiOverlayStyle.dark,
-//         title: Text(appLocalization.ourBranches),
+//         title: Text(AppGeneralTrans.ourBranches),
 //       ),
 //       body: BlocBuilder<BranchesCubit, BranchesCubitState>(
 //         builder: (context, state) {
@@ -51,7 +51,7 @@
 //                     children: [
 //                       DropdownButtonFormField<CityData>(
 //                         decoration: InputDecoration(
-//                           labelText: appLocalization.selectCity,
+//                           labelText: AppGeneralTrans.selectCity,
 //                           fillColor: UiConstants.colorTextFieldFill,
 //                           filled: true,
 //                           enabledBorder: const UnderlineInputBorder(

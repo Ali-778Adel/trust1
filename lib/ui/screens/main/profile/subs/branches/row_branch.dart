@@ -7,6 +7,7 @@ import 'package:map_launcher/map_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../../models/entities/public_entities/branch_model.dart';
+import '../../../../../../models/utils/themes/app_general_trans.dart';
 
 class RowBranch extends StatelessWidget {
   final BranchesModel branchData;
@@ -99,7 +100,7 @@ class RowBranch extends StatelessWidget {
                       icon: const Icon(Icons.near_me_rounded),
                       backgroundColor: UiConstants.colorBabyBlue,
                       label: Text(
-                        appLocalization.navigation,
+                        AppGeneralTrans.navigation,
                         style: Theme.of(context).textTheme.button?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: UiConstants.colorTitle),

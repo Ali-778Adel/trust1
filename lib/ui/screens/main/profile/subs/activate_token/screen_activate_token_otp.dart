@@ -13,6 +13,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../../../../../../models/utils/themes/app_general_trans.dart';
+
 
 class ScreenActivateTokenOtp extends StatefulWidget {
   final String mobileNumber;
@@ -59,7 +61,7 @@ class _StateScreenActivateTokenOtp extends State<ScreenActivateTokenOtp> {
 
       appBar: AppBar(
         systemOverlayStyle: SystemUiOverlayStyle.dark,
-        title: Text(appLocalization.activateTokenPin),
+        title: Text(AppGeneralTrans.activateTokenPin),
       ),
       body: BlocBuilder<AuthCubit, AuthCubitState>(
           builder: (context, state) {
@@ -75,7 +77,7 @@ class _StateScreenActivateTokenOtp extends State<ScreenActivateTokenOtp> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 50.0),
                       child: Text(
-                        appLocalization.enterOtpHint,
+                        AppGeneralTrans.enterOtpHint,
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyText1?.copyWith(
                             fontWeight: FontWeight.bold,
@@ -149,7 +151,7 @@ class _StateScreenActivateTokenOtp extends State<ScreenActivateTokenOtp> {
                                   ? Icons.visibility
                                   : Icons.visibility_off)),
                           errorText: _errorNewPassword ,
-                          labelText: appLocalization.newPassword,
+                          labelText: AppGeneralTrans.newPassword,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -186,7 +188,7 @@ class _StateScreenActivateTokenOtp extends State<ScreenActivateTokenOtp> {
                                   ? Icons.visibility
                                   : Icons.visibility_off)),
                           errorText: _errorConfirmPassword ,
-                          labelText: appLocalization.confirmPassword,
+                          labelText: AppGeneralTrans.confirmPassword,
                           fillColor: UiConstants.colorTextFieldFill,
                           filled: true,
                           enabledBorder: const UnderlineInputBorder(
@@ -211,7 +213,7 @@ class _StateScreenActivateTokenOtp extends State<ScreenActivateTokenOtp> {
                           },
                           child: state.isLoginLoading == true
                               ? const SizedBox(width: 35 , height: 35 ,child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)))
-                              : Text(appLocalization.activateTokenPin.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
+                              : Text(AppGeneralTrans.activateTokenPin.toUpperCase(),style: const TextStyle(fontWeight: FontWeight.bold),),
                           style: ButtonStyle(
                               minimumSize: MaterialStateProperty.all<Size>(
                                   Size(state.isLoginLoading == true ? 45 : double.infinity, 45)),
@@ -233,7 +235,7 @@ class _StateScreenActivateTokenOtp extends State<ScreenActivateTokenOtp> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          appLocalization.donotGetOtp,
+                          AppGeneralTrans.donotGetOtp,
                           textAlign: TextAlign.center,
                           style: Theme.of(context).textTheme.bodyText1?.copyWith(
 
@@ -248,7 +250,7 @@ class _StateScreenActivateTokenOtp extends State<ScreenActivateTokenOtp> {
                         } : null,
                           child: Text(
                               _timeInSeconds == 0 
-                                  ? appLocalization.resend.toUpperCase()
+                                  ? AppGeneralTrans.resend.toUpperCase()
                             : '00:${_timeInSeconds.toString().padLeft(2, '0')}',
                           textAlign: TextAlign.center,
                           style: Theme.of(context).textTheme.bodyText1?.copyWith(
@@ -289,12 +291,12 @@ class _StateScreenActivateTokenOtp extends State<ScreenActivateTokenOtp> {
 
 
 
-    _errorOtp = _otpController.text.length < 5 ?appLocalization.errorEnterOtp : null;
-    _errorNewPassword = _newPasswordController.text.isEmpty == true ? appLocalization.errorEnterNewPassword : null;
+    _errorOtp = _otpController.text.length < 5 ?AppGeneralTrans.errorEnterOtp : null;
+    _errorNewPassword = _newPasswordController.text.isEmpty == true ? AppGeneralTrans.errorEnterNewPassword : null;
 
     _errorConfirmPassword = _confirmPasswordController.text.isEmpty == true
-        ? appLocalization.errorEnterConfirmPassword
-        : (_confirmPasswordController.text != _newPasswordController.text ? appLocalization.errorMismatchPassword : null);
+        ? AppGeneralTrans.errorEnterConfirmPassword
+        : (_confirmPasswordController.text != _newPasswordController.text ? AppGeneralTrans.errorMismatchPassword : null);
 
 
 
